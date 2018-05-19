@@ -9,6 +9,12 @@ cache:
 sudo: false
 install:
   - npm install
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: /bin/sh deploy.sh
+  on:
+    branch: swd107-j
 script:
   - npm run lint
   - npm test
